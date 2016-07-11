@@ -8,9 +8,9 @@ function trainingrunIndex(req, res){
 }
 
 function trainingrunCreate(req, res){
-  console.log("here creating" + req.body)
+  console.log("New" + req.body)
   var trainingrun = new Trainingrun(req.body.trainingrun);
-  tra.save(function(err, trainingrun) {
+  trainingrun.save(function(err, trainingrun) {
     if (err) return res.status(500).send(err);
     res.status(201).send(trainingrun);
   });
