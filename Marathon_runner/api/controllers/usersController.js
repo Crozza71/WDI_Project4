@@ -17,11 +17,9 @@ function usersCreate(req, res){
 }
 
 function usersShow(req, res){
-  var id = req.params.id;
-  User.findById({ _id: id }, function(err, user) {
-    if (err) return res.status(500).send(err);
-    if (!user) return res.status(404).send(err);
-    res.status(200).send(user);
+  User.findById(req.params.id, function(err, user){
+    if (err) return res.status(404).json({message: 'Something went wrong.'});
+    res.status(200).json({ user: user });
   });
 }
 
@@ -35,12 +33,11 @@ function usersUpdate(req, res){
   });
 }
 
-function usersDelete(req, res){
-  var id = req.params.id;
-  User.remove({ _id: id }, function(err) {
-    if (err) return res.status(500).send(err);
-    res.status(204).send();
-  });
+function usersDelete(req, res) {
+ User.findByIdAndRemove(req.params.id, function(err) {
+   if(err) return res.status(500).json({ message: err });
+   return res.status(204).send();
+ });
 }
 
 module.exports = {

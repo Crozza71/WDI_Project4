@@ -1,5 +1,5 @@
 angular
-  .module('runners', ['angular-jwt', 'ngResource', 'ui.router', 'ngMaterial'])
+  .module('runners', ['angular-jwt', 'ngResource', 'ui.router', 'ngMaterial', 'uiGmapgoogle-maps'])
   .constant('API', 'http://localhost:3000')
   .config(MainRouter)
   .config(function($httpProvider) {
@@ -9,6 +9,13 @@ angular
     $mdThemingProvider.theme('teal')
       .primaryPalette('indigo')
       .accentPalette('yellow');
+  })
+  .config(function(uiGmapGoogleMapApiProvider) {
+      uiGmapGoogleMapApiProvider.configure({
+          key: 'AIzaSyBDIzPUL1nCjojuZMve2KoiAIq_xhjqW9k',
+          v: '3.23', //defaults to latest 3.X anyhow
+          libraries: 'weather,geometry,visualization'
+      });
   });
 
 MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -42,6 +49,12 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     .state('new-run', {
       url: "/run/new",
       templateUrl: "./js/views/run/new-run.html"
+    })
+    .state('map', {
+      url: '/map',
+      templateUrl: "./js/views/map.html",
+      controller: "MapsController",
+      controllerAs: "maps"
     })
 
   $urlRouterProvider.otherwise("/");

@@ -4,6 +4,10 @@
   <title>Marathon Runner</title>
   <!-- External Files -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+  <script src="../../bower_components/lodash/dist/lodash.min.js"></script>
+  <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-resource.min.js"></script>
@@ -13,50 +17,48 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 
 
   <script src="./js/app.js"></script>
   <script type="text/javascript" src="js/services/authInterceptor.js"></script>
   <script type="text/javascript" src="js/services/tokenService.js"></script>
-  <script src="./js/models/user.js"></script>
-  <script src="./js/models/run.js"></script>
-  <script src="./js/controllers/usersController.js"></script>
-  <script src="./js/controllers/runController.js"></script>
+  <script src="/js/models/user.js"></script>
+  <script src="/js/models/run.js"></script>
+  <script src="/js/controllers/usersController.js"></script>
+  <script src="/js/controllers/mapsController.js"></script>
+  <script src="/js/controllers/runController.js"></script>
   <script type="text/javascript" src="js/services/currentUser.js"></script>
+
 
   <!-- Stylesheets -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
- 
+  
 
 </head>
-<h1>Marathooooooooon Ruuuuuuner</h1>
 <body ng-controller="UsersController as users" layout="column" md-theme="teal">
-<header>
-<md-toolbar layout="row" layout-padding class="bg-dark-blue nav-dark" layout-align="end start">
-<div >
-      <md-button class="md-raised" ui-sref="#" ng-show="users.checkLoggedIn()">Hello, {{users.currentUser.local.name}}!</md-button>
-      <md-button class="md-raised" ui-sref="races" ng-show="users.checkLoggedIn()">Runs</md-button>
-      <md-button class="md-raised" ui-sref="new-race" ng-show="users.checkLoggedIn()">Add run</md-button>
-      <md-button class="md-raised" ui-sref="users" ng-show="users.checkLoggedIn()">Users</md-button>
-      <md-button class="md-raised" ui-sref="login" ng-hide="users.checkLoggedIn()">Login</md-button>
-      <md-button class="md-raised" ui-sref="register" ng-hide="users.checkLoggedIn()">Register</md-button>
-      <md-button class="md-raised" ui-sref="home" ng-click="users.logout()" ng-show="users.checkLoggedIn()">Logout</md-button>
-</div>
-</md-toolbar>
-
-<div id="map"></div>
-<div id="right-panel">
-  <p>Total Distance: <span id="total"></span></p>
-</div>
-</header>
-
-  <main class="container" ui-view></main>
-  <!-- <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxM36DxD-TmmCuWMML0UXBVSirOUkF42Q&callback=initMap">
-  </script> -->
+  <header>
+    <md-toolbar layout="row" layout-padding class="bg-dark-blue nav-dark" layout-align="end start">
+      <div >
+        <md-button class="md-raised" ui-sref="#" ng-show="users.checkLoggedIn()">Hello, {{users.currentUser.local.name}}!</md-button>
+        <md-button class="md-raised" ui-sref="races" ng-show="users.checkLoggedIn()">Runs</md-button>
+        <md-button class="md-raised" ui-sref="new-race" ng-show="users.checkLoggedIn()">Add run</md-button>
+        <md-button class="md-raised" ui-sref="users" ng-show="users.checkLoggedIn()">Users</md-button>
+        <md-button class="md-raised" ui-sref="login" ng-hide="users.checkLoggedIn()">Login</md-button>
+        <md-button class="md-raised" ui-sref="register" ng-hide="users.checkLoggedIn()">Register</md-button>
+        <md-button class="md-raised" ui-sref="home" ng-click="users.logout()" ng-show="users.checkLoggedIn()">Logout</md-button>
+      </div>
+    </md-toolbar>
+    </header>
+    <h1>Marathooooooooon Ruuuuuuner</h1>
+    <section ng-controller="MapsController as map">
+      <input type="button" value="Add Waypoint" ng-click="map.addWaypoint()">
+      <ui-gmap-google-map center="map.map.center" zoom="map.map.zoom" options="map.run.map.options" control="map.map.control">
+    </section>
+    <main class="container" ui-view></main>
 </body>
 </html>
 

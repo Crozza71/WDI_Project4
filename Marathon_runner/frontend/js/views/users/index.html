@@ -5,7 +5,7 @@
     <ul class="md-whiteframe-15dp">
       <li ng-repeat="user in users.all track by $index" class='user-tile'>
         <h2>{{user.local.name}}</h2> 
-        <p>{{user.local.username}}</p>
+        <!-- <p>{{user.local.username}}</p> -->
         <p>{{user.local.email}}</p>
         <button ng-click="users.showUser(user)">Show</button> 
         <a href='#' ng-click="users.deleteUser(user)">Delete</a> 

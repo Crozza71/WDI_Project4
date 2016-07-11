@@ -35,3 +35,5 @@ html, body {
   height: 100%;
   overflow: auto;
 }*/
+
+.angular-google-map-container { height: 400px; }
