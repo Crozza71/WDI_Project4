@@ -1,13 +1,13 @@
 angular
   .module('runners')
-  .factory('Trainingrun', Trainingrun);
+  .factory('run', run);
 
 User.$inject = ['$resource'];
 
-function Trainingrun($resource){
+function run($resource){
 
   return $resource(
-    'http://localhost:3000/trainingrun/:id', {id: '@id'},
+    'http://localhost:3000/run/:id', {id: '@id'},
     { 'get':       { method: 'GET' },
       'save':      { method: 'POST' },
       'query':     { method: 'GET', isArray: true},

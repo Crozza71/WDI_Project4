@@ -31,7 +31,7 @@ function UsersController(User, TokenService, CurrentUser, $state, $location){
    var token = res.token ? res.token : null;
    if (token) {
      self.getUsers();
-     $state.go('races');
+     $state.go('run');
    }
    self.currentUser = CurrentUser.getUser();
  }

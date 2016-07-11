@@ -35,13 +35,13 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: "/users/:id",
       templateUrl: "./js/views/users/show.html"
     })
-    .state('trainingrun', {
-      url: "/trainingrun",
-      templateUrl: "./js/views/trainingrun/index.html"
+    .state('run', {
+      url: "/run",
+      templateUrl: "./js/views/run/index.html"
     })
-    .state('new-trainingrun', {
-      url: "/trainingrun/new",
-      templateUrl: "./js/views/trainingrun/new-trainingrun.html"
+    .state('new-run', {
+      url: "/run/new",
+      templateUrl: "./js/views/run/new-run.html"
     })
 
   $urlRouterProvider.otherwise("/");

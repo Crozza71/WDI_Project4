@@ -1,0 +1,17 @@
+{
+  "name": "api",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Paul Crosby <paul71crosby@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Crozza71/WDI_Project4",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

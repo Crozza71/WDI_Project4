@@ -2,7 +2,7 @@ var express = require('express');
 var router  = express.Router();
 
 var usersController = require('../controllers/usersController');
-var trainingrunController = require('../controllers/trainingrunController');
+var runController = require('../controllers/runController');
 var authenticationsController = require('../controllers/authenticationsController');
 
 router.post('/login', authenticationsController.login);
@@ -19,8 +19,8 @@ router.route('/users/:id')
   .patch(usersController.usersUpdate)
   .delete(usersController.usersDelete);
 
-router.route('/trainingrun')
-  .get(trainingrunController.trainingrunIndex)
-  .post(trainingrunController.trainingrunCreate)
+router.route('/run')
+  .get(runController.runIndex)
+  .post(runController.runCreate)
 
 module.exports = router;
