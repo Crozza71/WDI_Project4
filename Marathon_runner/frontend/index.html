@@ -43,8 +43,8 @@
       <div >
         <md-button class="md-raised" ui-sref="home">Home</md-button>
         <md-button class="md-raised" ui-sref="#" ng-show="users.checkLoggedIn()">Hello, {{users.currentUser.local.name}}!</md-button>
-        <md-button class="md-raised" ui-sref="races" ng-show="users.checkLoggedIn()">Runs</md-button>
-        <md-button class="md-raised" ui-sref="new-race" ng-show="users.checkLoggedIn()">Add run</md-button>
+        <!-- <md-button class="md-raised" ui-sref="races" ng-show="users.checkLoggedIn()">Runs</md-button> -->
+        <!-- <md-button class="md-raised" ui-sref="new-race" ng-show="users.checkLoggedIn()">Add run</md-button> -->
         <md-button class="md-raised" ui-sref="users" ng-show="users.checkLoggedIn()">Users</md-button>
         <md-button class="md-raised" ui-sref="map" ng-show="users.checkLoggedIn()">Map</md-button>
         <md-button class="md-raised" ui-sref="login" ng-hide="users.checkLoggedIn()">Login</md-button>

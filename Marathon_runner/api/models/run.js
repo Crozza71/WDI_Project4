@@ -1,5 +1,14 @@
 var mongoose = require("mongoose");
 
+var waypointSchema = mongoose.Schema({
+  location:{ 
+    lat: Number, 
+    lng: Number 
+  }
+},{
+  _id:false
+});
+
 var runSchema = mongoose.Schema({
   title: String,
   origin: { 
@@ -10,14 +19,7 @@ var runSchema = mongoose.Schema({
       lat: Number, 
       lng: Number 
   },
-  waypoints: [
-    {
-      location:{ 
-        lat: Number, 
-        lng: Number 
-      }
-    }
-  ]
+  waypoints: [waypointSchema]
 });
 
 module.exports = mongoose.model("Run", runSchema);

@@ -30,7 +30,7 @@ function runUpdate(req, res){
   function runShow(req, res){
     Run.findById(req.params.id, function(err, run){
       if (err) return res.status(404).json({message: 'Something went wrong.'});
-      res.status(200).json({ run: run });
+      res.status(200).json(run);
     });
   }
 
