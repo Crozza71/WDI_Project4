@@ -24,7 +24,7 @@ function MainRouter($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: "/",
-      templateUrl: "./js/views/authentications/login.html"
+      templateUrl: "./js/views/home.html"
     })
     .state('login', {
       url: "/login",
@@ -53,8 +53,6 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     .state('map', {
       url: '/map',
       templateUrl: "./js/views/map.html",
-      controller: "MapsController",
-      controllerAs: "maps"
     })
 
   $urlRouterProvider.otherwise("/");

@@ -2,8 +2,30 @@ angular
   .module('runners')
   .controller('MapsController' , MapsController);
 
-function MapsController(uiGmapGoogleMapApi) {
+function MapsController(uiGmapGoogleMapApi, run) {
     var self = this;
+
+
+// ADD RUN
+//********
+    self.newRun = null;  
+
+    self.newTest = {};
+
+    self.addRun = function(){
+
+        console.log('addRun');
+        run.save({run: self.newRun}, function(response) {
+
+          console.log(response);
+         
+        });
+        
+
+        }
+
+//********
+
     // initial map data
     self.map = {
         center: { 
@@ -31,10 +53,12 @@ function MapsController(uiGmapGoogleMapApi) {
           },
           waypoints: [
             {
-              location:'Gu1 3jd'
+              location:{ 
+                lat: 51.3265140, 
+                lng: -0.2596870 
+              }
             }
-          ],
-          travelMode: maps.DirectionsTravelMode.WALKING
+          ]
         };
         // instantiate google map objects for directions
         self.directionsDisplay = new maps.DirectionsRenderer({
@@ -53,7 +77,7 @@ function MapsController(uiGmapGoogleMapApi) {
       });
       this.addWaypoint = function() {
           this.run.waypoints.push({
-            location: 'Gu1 3jd'
+            location: self.run.destination
           });
           this.showDirections();
       }

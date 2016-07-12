@@ -37,3 +37,7 @@ html, body {
 }*/
 
 .angular-google-map-container { height: 400px; }
+
+input {
+  width: 200px;
+}

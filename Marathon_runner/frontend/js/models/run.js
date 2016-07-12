@@ -2,7 +2,7 @@ angular
   .module('runners')
   .factory('run', run);
 
-User.$inject = ['$resource'];
+run.$inject = ['$resource'];
 
 function run($resource){
 

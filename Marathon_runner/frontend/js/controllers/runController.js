@@ -27,7 +27,7 @@ this.addrun = function(){
       console.log(response)
       console.log(self.newrun)
         self.all.push(self.newrun);
-        self.newProject = {}
+        self.newrun = {}
     });
 
     

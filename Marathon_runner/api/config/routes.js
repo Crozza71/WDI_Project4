@@ -21,6 +21,14 @@ router.route('/users/:id')
 
 router.route('/run')
   .get(runController.runIndex)
-  .post(runController.runCreate)
+  .post(runController.runCreate);
+
+router.route('/run/:id')
+  .get(runController.runShow)
+  .patch(runController.runUpdate)
+  .delete(runController.runDelete);
+
+
+
 
 module.exports = router;
