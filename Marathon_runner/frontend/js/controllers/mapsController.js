@@ -38,11 +38,6 @@ function MapsController(uiGmapGoogleMapApi, Run, $state, $stateParams) {
       console.log(response);
       self.run = null;
     })
-
-    // run.save({run: self.newRun}, function(response) {
-    //   console.log(response);
-    // });
-
   }
 
   function addWaypoint() {
@@ -77,12 +72,15 @@ function MapsController(uiGmapGoogleMapApi, Run, $state, $stateParams) {
 
   // wait for google maps to be loaded
   uiGmapGoogleMapApi.then(function(maps) {
-    // get the data for the run
-    Run.get({id: $stateParams.id } , function(){
-        // create the first set
+
+    if($state.params.id) {
+      Run.get({id: $stateParams.id } , function(run){
+        self.run = run;
         self.showDirections();
-    });
-    // self.run = new run();
+      });
+    } else {
+      self.run = new Run();
+    }
 
     // instantiate google map objects for directions
     self.directionsDisplay = new maps.DirectionsRenderer({
@@ -95,13 +93,6 @@ function MapsController(uiGmapGoogleMapApi, Run, $state, $stateParams) {
       self.run.waypoints = self.directionsDisplay.getDirections().request.waypoints;
       self.run.origin = self.directionsDisplay.getDirections().request.origin;
       self.run.destination = self.directionsDisplay.getDirections().request.destination;
-    });
-        
+    });       
   });
-
-  if($state.params.id) {
-    Run.get({ id: $state.params.id }, function(run) {
-      self.run = run;
-    })
-  }
 }
