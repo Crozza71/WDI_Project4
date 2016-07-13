@@ -4,6 +4,7 @@ var router  = express.Router();
 var usersController = require('../controllers/usersController');
 var runController = require('../controllers/runController');
 var authenticationsController = require('../controllers/authenticationsController');
+var commentsController = require('../controllers/commentsController');
 
 router.post('/login', authenticationsController.login);
 router.post('/register', authenticationsController.register);
@@ -27,6 +28,10 @@ router.route('/run/:id')
   .get(runController.runShow)
   .patch(runController.runUpdate)
   .delete(runController.runDelete);
+
+// router.route('/comments')
+//   .get(commentsController.commentsAll)
+//   .post(commentsController.commentsCreate);
 
 
 

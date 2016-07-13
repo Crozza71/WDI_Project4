@@ -12,6 +12,7 @@ function runController(Run, $state, $location){
 
   self.getrun  = getrun;
   self.addrun  = addrun;
+  self.deleterun = deleterun;
 
 
   function getrun(){
@@ -30,6 +31,16 @@ function runController(Run, $state, $location){
       self.newrun = {}
     }); 
   }
+
+  function deleterun(run){
+    Run.delete({id: run}, function(data){
+      console.log(data);
+    });
+    // Run.delete('http://localhost:3000/api/run/' + run._id, function(response){
+    //     console.log(response);
+    // })
+  }
+
 
   // function showrun(run) {
   //   this.runShow = run;
@@ -54,4 +65,6 @@ function runController(Run, $state, $location){
   // }
 
   getrun();
+
+  return self;
 }
