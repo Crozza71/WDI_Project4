@@ -40,11 +40,10 @@
 <body ng-controller="UsersController as users" layout="column" md-theme="teal">
   <header>
     <md-toolbar layout="row" layout-padding class="bg-dark-blue nav-dark" layout-align="end start">
-      <div >
+      <div>
         <md-button class="md-raised" ui-sref="home">Home</md-button>
-        <md-button class="md-raised" ui-sref="run" ng-show="users.checkLoggedIn()">Runs</md-button>
+        <md-button class="md-raised" ui-sref="runs" ng-show="users.checkLoggedIn()">Runs</md-button>
         <md-button class="md-raised" ui-sref="new-run" ng-show="users.checkLoggedIn()">Add Run</md-button>
-        <md-button class="md-raised" ui-sref="map" ng-show="users.checkLoggedIn()">Map</md-button>
         <md-button class="md-raised" ui-sref="login" ng-hide="users.checkLoggedIn()">Login</md-button>
         <md-button class="md-raised" ui-sref="register" ng-hide="users.checkLoggedIn()">Register</md-button>
         <md-button class="md-raised" ui-sref="#" ng-show="users.checkLoggedIn()">Hello, {{users.currentUser.local.name}}!</md-button>

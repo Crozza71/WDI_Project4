@@ -2,8 +2,8 @@ angular
   .module('runners')
   .controller('MapsController' , MapsController);
 
-MapsController.$inject = ['uiGmapGoogleMapApi', 'Run']
-function MapsController(uiGmapGoogleMapApi, Run) {
+MapsController.$inject = ['uiGmapGoogleMapApi', 'Run', '$state', '$stateParams']
+function MapsController(uiGmapGoogleMapApi, Run, $state, $stateParams) {
   var self = this;
 
   self.name        = "Fyll";
@@ -78,10 +78,10 @@ function MapsController(uiGmapGoogleMapApi, Run) {
   // wait for google maps to be loaded
   uiGmapGoogleMapApi.then(function(maps) {
     // get the data for the run
-    // self.run = run.get({id: "578500f65043109f325f22e3"} , function(){
-    //     // create the first set
-    //     self.showDirections();
-    // });
+    Run.get({id: $stateParams.id } , function(){
+        // create the first set
+        self.showDirections();
+    });
     // self.run = new run();
 
     // instantiate google map objects for directions
@@ -98,4 +98,10 @@ function MapsController(uiGmapGoogleMapApi, Run) {
     });
         
   });
+
+  if($state.params.id) {
+    Run.get({ id: $state.params.id }, function(run) {
+      self.run = run;
+    })
+  }
 }

@@ -11,6 +11,7 @@ var waypointSchema = mongoose.Schema({
 
 var runSchema = mongoose.Schema({
   title: String,
+  image: String,
   origin: { 
       lat: Number, 
       lng: Number 

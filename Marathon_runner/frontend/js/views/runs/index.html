@@ -4,6 +4,8 @@
   <li ng-repeat="run in runs.all">
     <ul>
       <li><h5>{{ run.title }}</h5></li>
+      <li><p>{{ run._id }}</p></li>
+      <li><button ui-sref="run({ id: run._id })">Show</button></li>
     </ul>
   </li>
 </ul>
