@@ -1,11 +1,9 @@
 angular
   .module('runners')
-  .factory('run', run);
+  .factory('Run', Run);
 
-run.$inject = ['$resource'];
-
-function run($resource){
-
+Run.$inject = ['$resource'];
+function Run($resource){
   return $resource(
     'http://localhost:3000/run/:id', {id: '@_id'},
     { 'get':       { method: 'GET' },

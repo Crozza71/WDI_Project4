@@ -43,12 +43,14 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "./js/views/users/show.html"
     })
     .state('run', {
-      url: "/run",
-      templateUrl: "./js/views/run/index.html"
+      url: "/runs",
+      templateUrl: "./js/views/run/index.html",
+      controller: "runController as runs"
     })
     .state('new-run', {
       url: "/run/new",
-      templateUrl: "./js/views/run/new-run.html"
+      templateUrl: "./js/views/run/new.html",
+      controller: "MapsController as map"
     })
     .state('map', {
       url: '/map',
