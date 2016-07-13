@@ -19,6 +19,7 @@ function UsersController(User, TokenService, CurrentUser, $state, $location){
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
   self.showUser      = showUser;
+  self.deleteUser    = deleteUser;
 
 
   function getUsers() {
@@ -60,11 +61,16 @@ function checkLoggedIn() {
 
 function showUser(user) {
   self.selectedUser = user;
-  console.log("oooo")
   console.log(self.selectedUser);
   $state.go('user');
 }
 
+function deleteUser(user){
+  self.delete({id: run}, function(data){
+    console.log(data);
+  });
+
+}
 
 this.displayUser = function() {
   console.log(self.selectedUser)

@@ -36,9 +36,7 @@ function runController(Run, $state, $location){
     Run.delete({id: run}, function(data){
       console.log(data);
     });
-    // Run.delete('http://localhost:3000/api/run/' + run._id, function(response){
-    //     console.log(response);
-    // })
+ 
   }
 
 
@@ -57,12 +55,7 @@ function runController(Run, $state, $location){
   //   })
   // }
 
-  // function deleteProject(run){
-  //   $http.delete('http://localhost:3000/run/' + run._id).then(function(response){
-  //     index = self.all.indexOf(run)
-  //     self.all.splice(index, 1)
-  //   })
-  // }
+  
 
   getrun();
 

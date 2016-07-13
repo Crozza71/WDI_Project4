@@ -1,43 +1,20 @@
-/*#right-panel {
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
-}
 
-#right-panel select, #right-panel input {
-  font-size: 15px;
-}
+body{
 
-#right-panel select {
-  width: 100%;
-}
+background:silver;
+background-image: url(http://i.imgur.com/5vUrdjD.jpg);
+background-size : cover;
+background-position: center center;
+width: 100%;
+height: 100%;
 
-#right-panel i {
-  font-size: 12px;
-}
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-#map {
-  height: 100%;
-  float: left;
-  width: 63%;
-  height: 100%;
-}
-#right-panel {
-  float: right;
-  width: 34%;
-  height: 100%;
-}
-.panel {
-  height: 100%;
-  overflow: auto;
-}*/
 
-.angular-google-map-container { height: 400px; }
+
+}
+.angular-google-map-container { height: 600px; }
 
 input {
   width: 200px;
+
+
 }
