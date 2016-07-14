@@ -1,7 +1,5 @@
 body{
-  background-image: url(http://i.imgur.com/GqCDKR6.jpg);
-  background-size : cover;
-  background-position: center center;
+  
   width: 100%;
   height: 100%;
 }
@@ -112,7 +110,7 @@ a.md-icon-button {
 
 
 
-/*#jogOn {
+#jogOn {
   float: right;
   margin-right: 10%;
   position: relative;
@@ -150,5 +148,11 @@ a.md-icon-button {
 }
 
 
+.home{
+  background-image: url(http://i.imgur.com/GqCDKR6.jpg);
+  background-size : cover;
+  background-position: center center;
+  width:100%;
+  height: 100vh;
 
-*/
+}
