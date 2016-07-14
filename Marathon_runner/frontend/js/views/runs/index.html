@@ -2,19 +2,30 @@
 
 
 <ul>
+  
   <li ng-repeat="run in runs.all">
     <ul>
+    <div class="card">
       <li><h5>{{ run.title }}</h5></li>
-      <!-- <li><p>{{ run._id }}</p></li> -->
-      <li><button ui-sref="run({ id: run._id })">Show</button></li>
-      <li><button ng-click="runs.deleterun(run._id)">Delete</button></li>
 
+      <button ui-sref="run({ id: run._id })" type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-heart"></i>Show</button>
+      <button ng-click="runs.deleterun(run._id)" type="button" class="btn btn-warning btn-circle btn-lg"><i class="glyphicon glyphicon-remove">Delete</i></button>
+
+
+
+      <!-- <li><p>{{ run._id }}</p></li> -->
+  
+
+<!--       <li><button ui-sref="run({ id: run._id })">Show</button></li>
+      <li><button ng-click="runs.deleterun(run._id)">Delete</button></li>
+    </div> -->
+  
 
     </ul>
   </li>
 </ul>
 
-<table class="w3-table w3-bordered w3-striped">
+<!-- <table class="w3-table w3-bordered w3-striped">
   <tr>
     <th>Title</th>
   </tr>
@@ -26,4 +37,4 @@
     </td>
     
   </tr>
-</table>
+</table> -->

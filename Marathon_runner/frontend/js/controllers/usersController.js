@@ -10,7 +10,7 @@ function UsersController(User, TokenService, CurrentUser, $state, $location){
   self.all           = [];
   self.user          = null;
   self.currentUser   = null;
-  // self.selectedUser  = {local: {email: "pete@test.com"}}
+  
   self.selectedUser  = null;
   self.error         = null;
   self.getUsers      = getUsers;
@@ -66,7 +66,7 @@ function showUser(user) {
 }
 
 function deleteUser(user){
-  self.delete({id: run}, function(data){
+  self.delete({id: user}, function(data){
     console.log(data);
   });
 

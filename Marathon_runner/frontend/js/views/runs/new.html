@@ -1,14 +1,21 @@
 <section class="map-container">
-  <input type="button" value="Add Waypoint" ng-click="map.addWaypoint()">
-  <ui-gmap-google-map center="map.map.center" zoom="map.map.zoom" options="map.run.map.options" control="map.map.control">
-</section>
 
 <h1>New Run</h1>
 
-<form>
+<form class="new_run">
   <input type="text" name="title" placeholder="title" ng-model="map.run.title">
   <input type="text" name="image" placeholder="image" ng-model="map.run.image">
 
   <input type="button" value="Save Run" ng-click="map.addRun()">
 </form>
+
+
+  <input type="button" value="Add Waypoint" ng-click="map.addWaypoint()">
+  <ui-gmap-google-map center="map.map.center" zoom="map.map.zoom" options="map.run.map.options" control="map.map.control">
+
+</section>
+
+
+
+
 
