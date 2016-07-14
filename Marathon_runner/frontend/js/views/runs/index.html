@@ -1,40 +1,23 @@
-<h1>Runs</h1>
+<h1 class="md-display-2">Runs</h1>
 
 
 <ul>
-  
+
   <li ng-repeat="run in runs.all">
-    <ul>
-    <div class="card">
-      <li><h5>{{ run.title }}</h5></li>
-
-      <button ui-sref="run({ id: run._id })" type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-heart"></i>Show</button>
-      <button ng-click="runs.deleterun(run._id)" type="button" class="btn btn-warning btn-circle btn-lg"><i class="glyphicon glyphicon-remove">Delete</i></button>
-
-
-
-      <!-- <li><p>{{ run._id }}</p></li> -->
-  
-
-<!--       <li><button ui-sref="run({ id: run._id })">Show</button></li>
-      <li><button ng-click="runs.deleterun(run._id)">Delete</button></li>
-    </div> -->
-  
-
-    </ul>
-  </li>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+      <div flex-xs flex-gt-xs="50" layout="column">
+        <ul>
+        <md-card>
+          <img ng-src="{{ run.image }}" class="md-card-image">
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button>{{ run.title }}</md-button>
+            <md-button ui-sref="run({ id: run._id })">Show Run</md-button>
+            <md-button ng-click="runs.deleterun(run._id)">Delete</md-button>
+          </md-card-actions>
+        </md-card>
+      </ul>
+    </div>
+  </md-content>
+</li>
 </ul>
 
-<!-- <table class="w3-table w3-bordered w3-striped">
-  <tr>
-    <th>Title</th>
-  </tr>
-  <tr ng-repeat="user in users">
-    <td>
-      <button class="w3-btn w3-ripple" ng-click="showRun(run._id)">&#9998; Show</button>
-      <button class="w3-btn w3-ripple" ng-click="deleteRun(run._id)">&#9998; Delete</button>
-
-    </td>
-    
-  </tr>
-</table> -->

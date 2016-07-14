@@ -1,4 +1,29 @@
-<section class="map-container">
+<section>
+  <div class="map-container">
+    <ui-gmap-google-map center="map.map.center" zoom="map.map.zoom" options="map.map.options" control="map.map.control">
+  </div>
+  <md-content layout-padding>
+    <form>
+      <div class="button-container">
+        <md-button class="waypoint md-raised md-primary" ng-click="map.addWaypoint()">Add Waypoint</md-button>
+        <md-button class="md-raised md-primary" ng-click="map.addRun()">Save Run</md-button>
+      </div>
+      <h1 class="md-display-1">Add Run</h1>
+      <md-input-container class="md-block">
+        <label>Title</label>
+        <input type="text" name="title" ng-model="map.run.title">
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>Image</label>
+        <input type="text" name="image" ng-model="map.run.image">
+      </md-input-container>
+    </form>
+  </md-content>
+</section>
+
+
+
+<!-- <section class="map-container">
 
 <div id="runheader">
 <div id="h1holder">
@@ -27,7 +52,7 @@
 
 
 </section>
-
+ -->
 
 
 
