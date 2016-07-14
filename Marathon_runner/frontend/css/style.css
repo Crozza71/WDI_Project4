@@ -10,6 +10,26 @@ height: 100%;
 
 }
 
+#saveRunForm {
+  float: left;
+  margin-left: 250px;
+  margin-top: 50px;
+}
+
+
+#h1holder {
+  width: 300px;
+  float: left;
+}
+
+#runheader {
+  width: 100%;
+}
+
+#waypointButton {
+  width: 40%;
+}
+
 .angular-google-map-container { height: 650px; }
 
 input {
@@ -44,7 +64,7 @@ button{
       height: 55px;
 
 }
-#jogOn {
+/*#jogOn {
   float: right;
   margin-right: 10%;
   position: relative;
@@ -52,7 +72,7 @@ button{
   transform: translateY(-50%);
   font-size: 100px;
 
-}
+}*/
 
 .new_run{
   float:right;
@@ -61,6 +81,24 @@ button{
   margin right: 5%;
 }
 
+.bounce {
+ position:fixed;
+ left:75%;
+ bottom:20%;
+ margin-top:-25px;
+ margin-left:-25px;
+ height:250px;
+ width:150px;
+
+ -webkit-animation:bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+ 0%       { bottom:5px; }
+ 25%, 75% { bottom:15px; }
+ 50%      { bottom:20px; }
+ 100%     {bottom:0;}
+}
 
 
 

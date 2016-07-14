@@ -1,17 +1,30 @@
 <section class="map-container">
 
+<div id="runheader">
+<div id="h1holder">
 <h1>New Run</h1>
-
-<form class="new_run">
-  <input type="text" name="title" placeholder="title" ng-model="map.run.title">
-  <input type="text" name="image" placeholder="image" ng-model="map.run.image">
-
-  <input type="button" value="Save Run" ng-click="map.addRun()">
-</form>
+</div>
 
 
+  <form  id="saveRunForm" class="new_run">
+    <input type="text" name="title" placeholder="title" ng-model="map.run.title">
+    <input type="text" name="image" placeholder="image" ng-model="map.run.image">
+
+    <input type="button" value="Save Run" ng-click="map.addRun()">
+  </form>
+
+
+</div>
+
+
+
+<div id="waypointButton">
   <input type="button" value="Add Waypoint" ng-click="map.addWaypoint()">
+
+  </div>
+  
   <ui-gmap-google-map center="map.map.center" zoom="map.map.zoom" options="map.run.map.options" control="map.map.control">
+
 
 </section>
 
