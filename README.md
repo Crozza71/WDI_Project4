@@ -67,6 +67,7 @@ As much as Angular has given me Nightmare, I can see how powerful a tool this ca
 -  Passport
 -  Bcrypt
 -  Express.js
+-  Node.js
 
 
 
