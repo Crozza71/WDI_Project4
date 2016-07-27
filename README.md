@@ -59,7 +59,7 @@ And obviously
 
 As much as Angular has given me Nightmare, I can see how powerful a tool this can be. I love what is does, but getting there is a massive struggle.
 
-#### The technologiews I used were:
+#### The technologies I used were:
 -  Angular
 -  Angular Material
 -  Angular Maps
